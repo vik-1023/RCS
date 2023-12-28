@@ -1166,6 +1166,17 @@ section {
     border-radius: 8px;
 	font-size: 14px;
 }
+
+#no-more-tables1 {
+    background-color: #fff;
+    box-shadow: 4px 6px 7px 6px #ccc;
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 8px;
+	font-size: 14px;
+        width: 1260px;
+    height: 57px;
+}
 .cf th {
     margin-top: 4px;
     border-color: #ccc;

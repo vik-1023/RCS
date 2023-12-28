@@ -1,7 +1,4 @@
- 
-
-
-<%@page import="java.util.logging.Logger"%>
+ <%@page import="java.util.logging.Logger"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="java.util.Map"%>

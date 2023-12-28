@@ -24,10 +24,10 @@ public class dbcon {
 
  String url = "jdbc:mysql://localhost:3306/";
     ResultSet rs = null;
-   String userName = "reports";
-   String password = "reports@#123";
- //String userName = "root";
-//String password = "root";
+//   String userName = "reports";
+//   String password = "reports@#123";
+ String userName = "root";
+String password = "root";
 
     public void getCon(String dbname) {
 

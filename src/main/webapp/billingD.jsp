@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<%@include file="session.jsp" %>
+<a href="session.jsp"></a>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>RCS BOT</title>
+        <title>My Billing</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
 
@@ -14,6 +14,7 @@
         <link href="assets1/img/favicon.png" rel="icon">
         <link href="assets1/img/apple-touch-icon.png" rel="apple-touch-icon">
         <script src="billingScript/billingJS.js" type="text/javascript"></script>
+        <!--        <script src="trafficScript/conc.js" type="text/javascript"></script>-->
         <script src="trafficScript/trafficDummyjs.js" type="text/javascript"></script>
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -44,40 +45,40 @@
 
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  
+
         <!-- Include flatpickr JS -->
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </head>
 
     <body>
         <%@include file="header.jsp" %>
-<!--         ======= Header ======= 
-        <header id="header" class="fixed-top">
-            <div class="container d-flex align-items-center justify-content-between">
-                <h1 class="logo"><a href="index.html"><img src="assets1/img/logo.png"></a></h1>
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">MY BOTS</a></li>
-                        <li><a class="nav-link scrollto" href="#about">MY BRANDS</a></li>
-                        <li><a class="nav-link scrollto" href="#services">MY CAMPAIGNS</a></li>
-                        <li><a class="nav-link scrollto o" href="#portfolio">API</a></li>
-                        <li><a class="nav-link scrollto" href="#team">MY BILLING</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-
-                </nav> .navbar 
-                <div class="dropdown">
-                    <button class="btn btn-secondary1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets1/img/profile_img.png">
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header> End Header -->
+        <!--         ======= Header ======= 
+                <header id="header" class="fixed-top">
+                    <div class="container d-flex align-items-center justify-content-between">
+                        <h1 class="logo"><a href="index.html"><img src="assets1/img/logo.png"></a></h1>
+                        <nav id="navbar" class="navbar">
+                            <ul>
+                                <li><a class="nav-link scrollto active" href="#hero">MY BOTS</a></li>
+                                <li><a class="nav-link scrollto" href="#about">MY BRANDS</a></li>
+                                <li><a class="nav-link scrollto" href="#services">MY CAMPAIGNS</a></li>
+                                <li><a class="nav-link scrollto o" href="#portfolio">API</a></li>
+                                <li><a class="nav-link scrollto" href="#team">MY BILLING</a></li>
+                            </ul>
+                            <i class="bi bi-list mobile-nav-toggle"></i>
+        
+                        </nav> .navbar 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets1/img/profile_img.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header> End Header -->
 
         <!-- ======= Hero Section ======= -->
         <section id="hero1" class="d-flex align-items-center">
@@ -118,7 +119,7 @@
                                 <div id="todayRangeInputs1" style="display: none;">
                                     <input type="date" id="startDate" name="startDate"  >
                                     <input type="date" id="endDate" name="endDate"  >
-                               </div> 
+                                </div> 
                                 <br>
                                 <div id="customRangeInput1" style="display: none;">
                                     <label for="customStartDate1">Custom Start Date:</label>
@@ -162,14 +163,25 @@
                         </div>
 
                         <div class="row">
-                       
+
                             <hr class="top-space">
                             <div class="col-md-6">
                                 <h1 class="summary">Summary</h1>
                             </div>
-                            <div class="col-md-6">
-                                <span class="dwonload-data"><a href="#">Download Report</a>&nbsp;&nbsp;<img src="assets1/img/icon_excel.svg" alt="Pdf" onclick="downloadPDFReport()">&nbsp;&nbsp;&nbsp;
-                                    <img src="assets1/img/icon_pdf.svg"  alt="Excel" onclick="downloadReport()"></span>
+                            <!--                            <div class="col-md-6">
+                                                            <span class="dwonload-data"><a href="#">Download Report</a>&nbsp;&nbsp;<img src="assets1/img/icon_excel.svg" alt="Pdf" onclick="downloadPDFReport()">&nbsp;&nbsp;&nbsp;
+                                                                <img src="assets1/img/icon_pdf.svg"  alt="Excel" onclick="downloadReport()"></span>
+                            
+                                                        </div>-->
+                            <!--                            <div class="col-md-6" id="expdf">
+                                                            <span class="dwonload-data"><a href="#">Download Report</a>&nbsp;&nbsp;<img src="assets/img/icon_excel.svg" onclick="downloadReport()">&nbsp;
+                                                                <img src="assets/img/icon_pdf.svg" onclick="downloadPDFReport()"></span>
+                            
+                                                        </div>-->
+
+                            <div class="col-md-6" id="expdf">
+                                <span class="dwonload-data"><a href="#">Download Report</a>&nbsp;&nbsp;<img src="assets/img/icon_pdf.svg" onclick="downloadPDFReport()">&nbsp;
+                                    <img src="assets/img/icon_excel.svg" onclick="downloadReport()"></span>
 
                             </div>
 
@@ -230,8 +242,9 @@
                             <div id="no-more-tables" >
                                 <div id="no-records-message">
                                     <center>No Billing Found</center>
-                                </div>                              
-                                 <table id="no-more-tablesssall" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                </div>  
+                                <div style="overflow-x:auto;">
+                                <table id="no-more-tablesssall" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
                                     <thead class="cf">
                                         <tr>
                                             <th>Date</th>
@@ -245,8 +258,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
-
                                     </tbody>
                                 </table>
 
@@ -294,6 +305,7 @@
                                     <tbody>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -353,7 +365,7 @@
                             <div class="col-sm-4 col-md-4 mt-10">
                                 <label for="disabledSelect" class="form-label">List By</label>
                                 <select id="listby1" class="form-select">
-                                    <option value="ALL">ALL</option>
+                                    <option value="ALLT">ALL</option>
                                     <option value="DateRanget">Date</option>
                                     <option value="Brandst">Brands</option>
                                     <option value="Botst">Bot</option>
@@ -366,49 +378,162 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-12">
-                       
-                                <div class="col-md-6">
-                                    <span class="dwonload-data1"><a href="#">Download Report</a>&nbsp;&nbsp;
-                                        <img src="assets1/img/icon_pdf.svg" alt="Excel" onclick="exportAllToExcel()"></span>
-                                </div>
-
-                            </div>
-                            <div id="no-more-tables">
-                                <div id="traffictableD">
-                                    <center>
-                                        traffic no records
-                                    </center>
-                                    <div>
+                            <div id="trafficexpdf" class="col-md-6">
+                                <span class="dwonload-data"><a href="#">Download Report</a>&nbsp;&nbsp;<img src="assets/img/icon_excel.svg" onclick="exportAllToExcel()">
+                                    <!--                                    <img src="assets/img/icon_pdf.svg"></span>-->
 
                                     </div>
+                                    <!--                            <div class="col-md-12">
+                                    
+                                                                    <div class="col-md-6">
+                                                                        <span class="dwonload-data1"><a href="#">Download Report</a>&nbsp;&nbsp;
+                                                                            <img src="assets1/img/icon_pdf.svg" alt="Excel" onclick="exportAllToExcel()"></span>
+                                                                    </div>
+                                    
+                                                                </div>-->
+                                    <br><br><br>
+                                    <div style="overflow-x:auto;">
+                                    <div id="no-more-tables">
+                                        <div id="traffictableD">
+                                            <center>
+                                                traffic no records
+                                            </center>
+                                      
+                                        </div>
+                                        <table id="no-more-tabless567all" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                            <thead class="cf">
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Brands</th>
+                                                    <th>Bots</th>
+                                                    <th>Template</th>
+                                                    <th>Messages Submitted</th>
+                                                    <th class="numeric">Messages Sent</th>
+                                                    <th class="numeric">Messages Read</th>
+                                                    <th class="numeric">Messages Failed</th>
+                                                    <th class="numeric">Messages Revoked</th>
+                                                    <th class="numeric">Delivery Rate</th>
+                                                    <th class="numeric">Messages Revoked</th>
+                                                    <th class="numeric">Read Rate</th>
+                                                    <th class="numeric">P2A Responses</th>  
+                                                    <th class="numeric">P2A Messages</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+
+                                        
+                                            <table id="no-more-tablessdate" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                                <thead class="cf">
+                                                    <tr>
+                                                        <th>Date</th>                                    
+                                                        <th>Messages Submitted</th>
+                                                        <th class="numeric">Messages Sent</th>
+                                                        <th class="numeric">Messages Read</th>
+                                                        <th class="numeric">Messages Failed</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Delivery Rate</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Read Rate</th>
+                                                        <th class="numeric">P2A Responses</th>  
+                                                        <th class="numeric">P2A Messages</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
 
 
-                                </div>
+                                            <table id="no-more-tablessbrands" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                                <thead class="cf">
+                                                    <tr>                                      
+                                                        <th>Brands</th>                 
+                                                        <th>Messages Submitted</th>
+                                                        <th class="numeric">Messages Sent</th>
+                                                        <th class="numeric">Messages Read</th>
+                                                        <th class="numeric">Messages Failed</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Delivery Rate</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Read Rate</th>
+                                                        <th class="numeric">P2A Responses</th>  
+                                                        <th class="numeric">P2A Messages</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+
+                                            <table id="no-more-tablessbots" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                                <thead class="cf">
+                                                    <tr>                                    
+                                                        <th>Bots</th>
+                                                        <th>Messages Submitted</th>
+                                                        <th class="numeric">Messages Sent</th>
+                                                        <th class="numeric">Messages Read</th>
+                                                        <th class="numeric">Messages Failed</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Delivery Rate</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Read Rate</th>
+                                                        <th class="numeric">P2A Responses</th>  
+                                                        <th class="numeric">P2A Messages</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+
+
+                                            <table id="no-more-tablesstemplate" class="col-md-12 table-bordered table-striped table-condensed cf" style="display:none;">
+                                                <thead class="cf">
+                                                    <tr>                                      
+                                                        <th>Template</th>
+                                                        <th>Messages Submitted</th>
+                                                        <th class="numeric">Messages Sent</th>
+                                                        <th class="numeric">Messages Read</th>
+                                                        <th class="numeric">Messages Failed</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Delivery Rate</th>
+                                                        <th class="numeric">Messages Revoked</th>
+                                                        <th class="numeric">Read Rate</th>
+                                                        <th class="numeric">P2A Responses</th>  
+                                                        <th class="numeric">P2A Messages</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                   
+                                    </div>
                             </div>
                         </div>
                         <!---------Tab-Scend-----End----->
 
                     </div>
                     </section><!-- End Hero -->
-<%@include file="footer.jsp" %>
-<!--                     ======= Footer ======= 
-                    <footer id="footer">
-                        <div class="container d-md-flex py-4">
-                            <div class="me-md-auto text-center text-md-start">
-                                <div class="copyright">
-                                    &copy; Copyright <strong><span>OnePage</span></strong>. All Rights Reserved
-                                </div>
-                            </div>
-                            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </footer> End Footer -->
+                    <%@include file="footer.jsp" %>
+                    <!--                     ======= Footer ======= 
+                                        <footer id="footer">
+                                            <div class="container d-md-flex py-4">
+                                                <div class="me-md-auto text-center text-md-start">
+                                                    <div class="copyright">
+                                                        &copy; Copyright <strong><span>OnePage</span></strong>. All Rights Reserved
+                                                    </div>
+                                                </div>
+                                                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                                                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                        </footer> End Footer -->
 
                     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -439,5 +564,18 @@
                             left: 376px;
                             top: -29px;
                         }
+                        #expdf{
+                            position: relative;
+                            left: 421px;
+                        }
+                        #trafficexpdf{
+                            position: relative;
+                            left: 1117px;
+                            top: 23px;
+                        }
+                        /*                            #no-more-tabless567all{
+                                                        width: 102px;
+                                                    }*/
+
                     </style>
                     </html>

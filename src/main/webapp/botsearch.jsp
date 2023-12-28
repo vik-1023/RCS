@@ -1,6 +1,6 @@
  
 
-<%@include file="session.jsp" %>
+
 <%@page import="java.util.logging.Logger"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="org.json.JSONArray"%>
@@ -13,14 +13,14 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
+<%@include file="session.jsp" %>
 
 
 <%
     Logger logger = Logger.getLogger("BillingDashboardBotJSP");
 
     try {
-// String username="ram";
+ //String username="ram";
         // Get the username from the session
      //   HttpSession session1 = request.getSession();
 //        String username = (String) session1.getAttribute("username");

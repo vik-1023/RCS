@@ -27,6 +27,9 @@ function Searchtraffic() {
     logMessage(`BotList1: ${BotList1}`);
     //  alert("BotList1:"+BotList1);
 
+    var templatesid = document.getElementById("templatesid").value;
+
+
     var listby1 = document.getElementById("listby1").value;
     logMessage(`listby1: ${listby1}`);
     //  alert("listby1:"+listby1);
@@ -34,7 +37,7 @@ function Searchtraffic() {
 
     //   var url = "TrafiicTable.jsp";
 
-    var url = "TrafiicTable.jsp?startDate1=" + startDate1 + "&endDate1=" + endDate1 + "&BrandList1=" + BrandList1 + "&BotList1=" + BotList1 + "&listby1=" + listby1;
+    var url = "TrafiicTable.jsp?startDate1=" + startDate1 + "&endDate1=" + endDate1 + "&BrandList1=" + BrandList1 + "&BotList1=" + BotList1 + "&templatesid=" + templatesid + "&listby1=" + listby1;
 
     var xhr = new XMLHttpRequest();
 
@@ -42,9 +45,193 @@ function Searchtraffic() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 try {
-                    var a = this.responseText;
-                    document.getElementById("traffictableD").innerHTML = a;
-                    logMessage("Response received successfully");
+                    var jsonResponse = JSON.parse(this.responseText);
+
+                    // Get the tbody element where the content will be added
+                    var tbody = document.querySelector("#no-more-tabless567all tbody");
+                    var tbody1 = document.querySelector("#no-more-tablessdate tbody");
+                    var tbody2 = document.querySelector("#no-more-tablessbrands tbody");
+                    var tbody3 = document.querySelector("#no-more-tablessbots tbody");
+                    var tbody4 = document.querySelector("#no-more-tablesstemplate tbody");
+
+                    // Clear existing content in the no-more-tablesstemplate
+                    tbody.innerHTML = "";
+                    tbody1.innerHTML = "";
+                    tbody2.innerHTML = "";
+                    tbody3.innerHTML = "";
+
+                    // Generate HTML based on the JSON data
+                    for (var i = 0; i < jsonResponse.length; i++) {
+                        var row = jsonResponse[i];
+                        if (listby1 === "ALLT") {
+
+                            document.getElementById("no-more-tabless567all").style.display = "table";
+                            document.getElementById("no-more-tablessdate").style.display = "none";
+                            document.getElementById("no-more-tablessbrands").style.display = "none";
+                            document.getElementById("no-more-tablessbots").style.display = "none";
+                            document.getElementById("no-more-tablesstemplate").style.display = "none";
+
+                            logMessage(`Adding row to Brands table - Brands: ${row.Brands}, TransactionType: ${row.TransactionType}, BasicMessageCount: ${row.BasicMessageCount}, A2PSingleMessageCount: ${row.A2PSingleMessageCount}, A2PConversationCount: ${row.A2PConversationCount}, P2AConversationCount: ${row.P2AConversationCount}`);
+
+
+                            var newRow = document.createElement("tr");
+
+                            // Add cells to the new row
+                            newRow.innerHTML = "<td>" + row.DateRange + "</td>" +
+                                    "<td>" + row.Brands + "</td>" +
+                                    "<td>" + row.Bots + "</td>" +
+                                    "<td>" + row.Templates + "</td>" +
+                                    "<td>" + row.MessagesSubmittedColumn + "</td>" +
+                                    "<td>" + row.MessagesSentColumn + "</td>" +
+                                    "<td>" + row.MessagesReadColumn + "</td>" +
+                                    "<td>" + row.MessagesFailedColumn + "</td>" +
+                                    "<td>" + row.MessagesRevokedColumn + "</td>" +
+                                    "<td>" + row.DeliveryRateColumn + "</td>" +
+                                    "<td>" + row.ReadRateColumn + "</td>" +
+                                    "<td>" + row.P2AResponsesColumn + "</td>" +
+                                    "<td>" + row.P2AResponseRateColumn + "</td>" +
+                                    "<td>" + row.P2AMessagesColumn + "</td>";
+//                                "<td>" + row.Brands + "</td>";
+
+                            // Append the new row to the tbody
+                            tbody.appendChild(newRow);
+
+
+                        } else if (listby1 === "DateRanget") {
+                            document.getElementById("no-more-tabless567all").style.display = "none";
+                            document.getElementById("no-more-tablessdate").style.display = "table";
+                            document.getElementById("no-more-tablessbrands").style.display = "none";
+                            document.getElementById("no-more-tablessbots").style.display = "none";
+                            document.getElementById("no-more-tablesstemplate").style.display = "none";
+
+
+                            // Logging for DateRange
+                            logMessage(`Adding row to DateRange table - DateRange: ${row.DateRange}, TransactionType: ${row.TransactionType}, BasicMessageCount: ${row.BasicMessageCount}, A2PSingleMessageCount: ${row.A2PSingleMessageCount}, A2PConversationCount: ${row.A2PConversationCount}, P2AConversationCount: ${row.P2AConversationCount}`);
+
+                            // Create a new table row
+                            var newRow = document.createElement("tr");
+
+                            // Add cells to the new row
+                            newRow.innerHTML = "<td>" + row.DateRange + "</td>" +
+                                    "<td>" + row.MessagesSubmittedColumn + "</td>" +
+                                    "<td>" + row.MessagesSentColumn + "</td>" +
+                                    "<td>" + row.MessagesReadColumn + "</td>" +
+                                    "<td>" + row.MessagesFailedColumn + "</td>" +
+                                    "<td>" + row.MessagesRevokedColumn + "</td>" +
+                                    "<td>" + row.DeliveryRateColumn + "</td>" +
+                                    "<td>" + row.ReadRateColumn + "</td>" +
+                                    "<td>" + row.P2AResponsesColumn + "</td>" +
+                                    "<td>" + row.P2AResponseRateColumn + "</td>" +
+                                    "<td>" + row.P2AMessagesColumn + "</td>";
+//                                "<td>" + row.Brands + "</td>";
+
+                            // Append the new row to the tbody
+                            tbody1.appendChild(newRow);
+
+                        } else if (listby1 === "Brandst") {
+                            document.getElementById("no-more-tabless567all").style.display = "none";
+                            document.getElementById("no-more-tablessdate").style.display = "none";
+                            document.getElementById("no-more-tablessbrands").style.display = "table";
+                            document.getElementById("no-more-tablessbots").style.display = "none";
+                            document.getElementById("no-more-tablesstemplate").style.display = "none";
+
+
+                            logMessage(`Adding row to Brands table - Brands: ${row.Brands}, TransactionType: ${row.TransactionType}, BasicMessageCount: ${row.BasicMessageCount}, A2PSingleMessageCount: ${row.A2PSingleMessageCount}, A2PConversationCount: ${row.A2PConversationCount}, P2AConversationCount: ${row.P2AConversationCount}`);
+
+
+                            var newRow = document.createElement("tr");
+
+                            // Add cells to the new row
+                            newRow.innerHTML =
+                                    "<td>" + row.Brands + "</td>" +
+                                    "<td>" + row.MessagesSubmittedColumn + "</td>" +
+                                    "<td>" + row.MessagesSentColumn + "</td>" +
+                                    "<td>" + row.MessagesReadColumn + "</td>" +
+                                    "<td>" + row.MessagesFailedColumn + "</td>" +
+                                    "<td>" + row.MessagesRevokedColumn + "</td>" +
+                                    "<td>" + row.DeliveryRateColumn + "</td>" +
+                                    "<td>" + row.ReadRateColumn + "</td>" +
+                                    "<td>" + row.P2AResponsesColumn + "</td>" +
+                                    "<td>" + row.P2AResponseRateColumn + "</td>" +
+                                    "<td>" + row.P2AMessagesColumn + "</td>";
+//                                "<td>" + row.Brands + "</td>";
+
+                            // Append the new row to the tbody
+                            tbody2.appendChild(newRow);
+
+
+                        } else if (listby1 === "Botst") {
+
+                            document.getElementById("no-more-tabless567all").style.display = "none";
+                            document.getElementById("no-more-tablessdate").style.display = "none";
+                            document.getElementById("no-more-tablessbrands").style.display = "none";
+                            document.getElementById("no-more-tablessbots").style.display = "table";
+                            document.getElementById("no-more-tablesstemplate").style.display = "none";
+
+
+                            logMessage(`Adding row to Bots table - Bots: ${row.Bots}, TransactionType: ${row.TransactionType}, BasicMessageCount: ${row.BasicMessageCount}, A2PSingleMessageCount: ${row.A2PSingleMessageCount}, A2PConversationCount: ${row.A2PConversationCount}, P2AConversationCount: ${row.P2AConversationCount}`);
+
+                            var newRow = document.createElement("tr");
+
+                            // Add cells to the new row
+                            newRow.innerHTML =
+                                    "<td>" + row.Bots + "</td>" +
+                                    "<td>" + row.MessagesSubmittedColumn + "</td>" +
+                                    "<td>" + row.MessagesSentColumn + "</td>" +
+                                    "<td>" + row.MessagesReadColumn + "</td>" +
+                                    "<td>" + row.MessagesFailedColumn + "</td>" +
+                                    "<td>" + row.MessagesRevokedColumn + "</td>" +
+                                    "<td>" + row.DeliveryRateColumn + "</td>" +
+                                    "<td>" + row.ReadRateColumn + "</td>" +
+                                    "<td>" + row.P2AResponsesColumn + "</td>" +
+                                    "<td>" + row.P2AResponseRateColumn + "</td>" +
+                                    "<td>" + row.P2AMessagesColumn + "</td>";
+//                                "<td>" + row.Brands + "</td>";
+
+                            // Append the new row to the tbody
+                            tbody3.appendChild(newRow);
+
+
+                        } else if (listby1 === "Templates") {
+
+                            document.getElementById("no-more-tabless567all").style.display = "none";
+                            document.getElementById("no-more-tablessdate").style.display = "none";
+                            document.getElementById("no-more-tablessbrands").style.display = "none";
+                            document.getElementById("no-more-tablessbots").style.display = "none";
+                            document.getElementById("no-more-tablesstemplate").style.display = "table";
+
+
+                            logMessage(`Adding row to Bots table - Bots: ${row.Bots}, TransactionType: ${row.TransactionType}, BasicMessageCount: ${row.BasicMessageCount}, A2PSingleMessageCount: ${row.A2PSingleMessageCount}, A2PConversationCount: ${row.A2PConversationCount}, P2AConversationCount: ${row.P2AConversationCount}`);
+
+                            var newRow = document.createElement("tr");
+
+                            // Add cells to the new row
+                            newRow.innerHTML =
+                                    "<td>" + row.Templates + "</td>" +
+                                    "<td>" + row.MessagesSubmittedColumn + "</td>" +
+                                    "<td>" + row.MessagesSentColumn + "</td>" +
+                                    "<td>" + row.MessagesReadColumn + "</td>" +
+                                    "<td>" + row.MessagesFailedColumn + "</td>" +
+                                    "<td>" + row.MessagesRevokedColumn + "</td>" +
+                                    "<td>" + row.DeliveryRateColumn + "</td>" +
+                                    "<td>" + row.ReadRateColumn + "</td>" +
+                                    "<td>" + row.P2AResponsesColumn + "</td>" +
+                                    "<td>" + row.P2AResponseRateColumn + "</td>" +
+                                    "<td>" + row.P2AMessagesColumn + "</td>";
+//                                "<td>" + row.Brands + "</td>";
+
+                            // Append the new row to the tbody
+                            tbody4.appendChild(newRow);
+                        }else {
+                            document.getElementById("traffictableD").innerHTML = "No Record Found!!";
+                        }
+                        document.getElementById("traffictableD").style.display = "none";
+
+                    }
+
+                    logMessage("SearchBill function completed successfully.");
+
+
 
                 } catch (error) {
                     logMessage(`Error in response handling: ${error}`);
@@ -409,7 +596,7 @@ function exportAllToExcel() {
     var wb = XLSX.utils.book_new();
 
     // Iterate through tables and add them to the workbook
-    ['myTable', 'myTable1', 'myTable2', 'myTable3', 'myTable4'].forEach(function (tableId, index) {
+    ['no-more-tabless567all', 'no-more-tablessdate', 'no-more-tablessbrands', 'no-more-tablessbots', 'no-more-tablesstemplate'].forEach(function (tableId, index) {
         var table = document.getElementById(tableId);
 
         // Check if the table element is found

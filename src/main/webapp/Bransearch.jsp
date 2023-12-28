@@ -1,7 +1,4 @@
- 
-
-
-<%@page import="java.util.logging.Logger"%>
+ <%@page import="java.util.logging.Logger"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="java.util.Map"%>
@@ -9,8 +6,8 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.dbcon"%>
-
 <%@include file="session.jsp" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
