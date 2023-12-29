@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
+ 
 
 import db.dbcon;
 import java.io.IOException;
@@ -28,8 +28,6 @@ import org.json.JSONObject;
  * @author Admin
  */
 public class ChatPBck extends HttpServlet {
-
-    String PMSG_ID = "N/a";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -83,6 +81,8 @@ public class ChatPBck extends HttpServlet {
 
         JSONObject recObj = new JSONObject();
 
+       
+
         try {
             if (rs.next()) {
 
@@ -90,8 +90,7 @@ public class ChatPBck extends HttpServlet {
                 Msg = rs.getString("Msg");
                 User = rs.getString("User");
                 Msg_ID = rs.getString("Msg_ID");
-                  S_R = rs.getString("S_R");
-                
+                S_R = rs.getString("S_R");
 
                 recObj.put("Time", Time);
                 recObj.put("S_R", S_R);
@@ -101,15 +100,18 @@ public class ChatPBck extends HttpServlet {
                 recObj.put("Msg_ID", Msg_ID);
 
             }
+             HttpSession s = request.getSession(false);
+
+        String PMSG_ID = (String) s.getAttribute("PMSG_ID");
 
             if ((PMSG_ID.equals(Msg_ID))) {
 
                 out.print("alreadySentMessage" + PMSG_ID + "Msg_ID" + Msg_ID);
 
             } else {
-
-                PMSG_ID = Msg_ID;
-
+                s = request.getSession(true);
+                s.setAttribute("PMSG_ID", Msg_ID);
+            
                 out.print("Sent" + recObj);
 
             }
@@ -140,6 +142,7 @@ public class ChatPBck extends HttpServlet {
         String Msg_ID = null;
         String User = null;
         String S_R = null;
+        String RMsg_ID = null;
 
         dbcon db = new dbcon();
         db.getCon("userapilogin");
@@ -158,10 +161,14 @@ public class ChatPBck extends HttpServlet {
                 Msg = rs.getString("Msg");
                 User = rs.getString("User");
                 Msg_ID = rs.getString("Msg_ID");
+                
                 S_R = rs.getString("S_R");
+                if(S_R.equals("R")){
+                    RMsg_ID=Msg_ID;
+                }
 
                 jsonObject1.put("Time", Time);
-                 jsonObject1.put("S_R", S_R);
+                jsonObject1.put("S_R", S_R);
 
                 jsonObject1.put("Msg", Msg);
                 jsonObject1.put("User", User);
@@ -169,9 +176,9 @@ public class ChatPBck extends HttpServlet {
                 jsonObjects.add(jsonObject1);
 //                      System.out.println("Json obj"+jsonObject1);
             }
-                PMSG_ID=Msg_ID;
+            HttpSession s = request.getSession();
+            s.setAttribute("PMSG_ID", RMsg_ID);
             out.println("list" + jsonObjects);
-              
 
         } catch (Exception ex) {
             System.out.println("Exception" + ex);

@@ -111,7 +111,7 @@
               <button onclick="Send_DB()" class="btn btn-warning" type="button" id="button-addon2" style="padding-top: .55rem;">
                 Submit
               </button>
-               <button onclick="recMsg_D()" class="btn btn-warning" type="button" id="recMsg" style="padding-top: .55rem;" hidden>
+               <button onclick="recMsg_D()" class="btn btn-warning" type="button" id="recMsg" style="padding-top: .55rem;"  hidden>
                    
                 Refresh
               </button>
@@ -119,6 +119,10 @@
                <button onclick="loadChat()" class="btn btn-warning"  type="button" id="reload" style="padding-top: .55rem;" hidden>
                    
                reload
+              </button>
+              <button onclick="Test()" class="btn btn-warning"  type="button" id="Test" style="padding-top: .55rem;"  hidden>
+                   
+               Test
               </button>
               
         
