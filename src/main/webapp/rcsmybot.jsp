@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@include file="session.jsp" %>
 <html lang="en">
 
     <head>
@@ -275,6 +274,10 @@
             </div>
         </section>
 
+        <div id="pleaseWaitMessage" style="display: none;">
+            Please wait...
+        </div>
+
         <div id="customPopup">
             <p>Form submitted successfully!</p>
             <!-- Going button -->
@@ -309,58 +312,69 @@
 
     </body>
     <script>
-                        function showCustomPopup() {
-                            try {
-                                var popup = document.getElementById('customPopup');
-                                popup.style.display = 'block';
 
-                                // Add event listener to the "Going" button
-                                var goingButton = document.getElementById('goingButton');
-                                goingButton.addEventListener('click', function () {
-                                    // Redirect to new.jsp when the button is clicked
-                                    window.location.href = 'CreateNewRcs.jsp';
-                                });
-                                // Example log message
-                                logMessage("Custom popup displayed successfully.");
-                            } catch (error) {
-                                // Example log error
-                                logError("Error while displaying custom popup: " + error.message);
-                            }
-                        }
+//                    function displayPleaseWaitMessage() {
+//                        // Display "Please wait" message to the user
+//                        var pleaseWaitMessage = document.getElementById('pleaseWaitMessage');
+//                        if (pleaseWaitMessage) {
+//                            pleaseWaitMessage.style.display = 'block';
+//                        }
+//                    }
+                    function showCustomPopup() {
+                        try {
+                            // Hide "Please wait" message
+//                            var pleaseWaitMessage = document.getElementById('pleaseWaitMessage');
+//                            if (pleaseWaitMessage) {
+//                                pleaseWaitMessage.style.display = 'none';
+//                            }
 
-                        document.addEventListener("DOMContentLoaded", function () {
-                            document.getElementById("combinedForm").addEventListener("submit", function (event) {
-                                event.preventDefault();
+                            var popup = document.getElementById('customPopup');
+                            popup.style.display = 'block';
 
-                                var formData = new FormData(this);
-
-                                var xhr = new XMLHttpRequest();
-                                xhr.open("POST", "FormSubmissionServlet1", true);
-                                xhr.onreadystatechange = function () {
-                                    if (xhr.readyState === 4) {
-                                        if (xhr.status === 200) {
-
-                                            showCustomPopup();
-// Example log message
-                                            logMessage("Form submitted successfully.");
-                                            // alert("Error submitting form. Please try again.");
-                                            //openPopup();
-                                        } else {
-                                            // Handle errors
-                                            //    alert("Error submitting form. Please try again.");
-                                            logError("Error submitting form. Please try again.");
-
-                                        }
-                                    }
-                                };
-
-                                // Send the form data
-                                xhr.send(formData);
+                            // Add event listener to the "Going" button
+                            var goingButton = document.getElementById('goingButton');
+                            goingButton.addEventListener('click', function () {
+                                // Redirect to new.jsp when the button is clicked
+                                window.location.href = 'CreateNewRcs.jsp';
                             });
+                            // Example log message
+                            logMessage("Custom popup displayed successfully.");
+                        } catch (error) {
+                            // Example log error
+                            logError("Error while displaying custom popup: " + error.message);
+                        }
+                    }
+
+                    document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("combinedForm").addEventListener("submit", function (event) {
+                            event.preventDefault();
+                            // displayPleaseWaitMessage();
+
+                            var formData = new FormData(this);
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", "FormSubmissionServlet1", true);
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4) {
+                                    if (xhr.status === 200) {
+
+                                        showCustomPopup();
+// Example log message
+                                        logMessage("Form submitted successfully.");
+                                        // alert("Error submitting form. Please try again.");
+                                        //openPopup();
+                                    } else {
+                                        // Handle errors
+                                        //    alert("Error submitting form. Please try again.");
+                                        logError("Error submitting form. Please try again.");
+
+                                    }
+                                }
+                            };
+                            // Send the form data
+                            xhr.send(formData);
                         });
-
-
-
+                    });
     </script>
 
 
