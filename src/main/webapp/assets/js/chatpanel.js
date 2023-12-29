@@ -1,7 +1,16 @@
+  const myTimeout = setInterval(recMsg_D, 1000);
+
+ function Test(){
+const now = new Date();
+const formattedTime = now.toLocaleString();
+
+alert(formattedTime);
+ }
+
+
+
 // on load 
 
-
- 
 window.onload = function() {
     // Your function to run when the page is loaded or reloaded
     loadChat();
@@ -9,7 +18,8 @@ window.onload = function() {
  
 function recMsg_D() {
    
-
+const now = new Date();
+const formattedTime = now.toLocaleString();
     var url = "ChatPBck";
 
     var xhr = new XMLHttpRequest();
@@ -21,10 +31,10 @@ function recMsg_D() {
                 var resp = xhr.responseText;
 
 
-                alert(resp);
+                  console.error("Sent",resp);
                 if (resp.startsWith("Sent")) {
                     
-
+                    
                     var jsonStr = resp.substring("Sent".length);
 
                     var responseData = JSON.parse(jsonStr);
@@ -33,13 +43,13 @@ function recMsg_D() {
                     var Time = responseData.Time;
 
 
-                    recPRint(Msg, User);
+                    recPRint(Msg, User,Time);
 
 
 
                 } else if (resp.startsWith("alreadySentMessage")) {
-                    alert("alreadySentMessage");
-                   
+                    
+                    console.error("alreadySentMessage",resp);
 
                 }
 
@@ -62,7 +72,11 @@ function recMsg_D() {
 function Send_DB() {
     var messageInput = document.getElementById("messageInput");
     var message = messageInput.value;
+    const now = new Date();
+const Time = now.toLocaleString();
+var User = "ChatBot";
 
+ 
 
 
     var url = "inserDB?message=" + message;
@@ -78,7 +92,7 @@ function Send_DB() {
 
 
                 if (resp.startsWith("DBentered")) {
-                    send_msg(message);
+                    send_msg(message,User,Time);
 
 
 
