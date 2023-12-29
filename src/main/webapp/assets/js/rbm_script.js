@@ -87,7 +87,7 @@ function validateForm() {
 //    for (var i = 0; i < phoneNumberInputs.length; i++) {
 //        var phoneNumber = phoneNumberInputs[i].value;
 //        if (phoneNumber.trim() === "") {
-//            ("Phone number cannot be empty");
+//            alert("Phone number cannot be empty");
 //            return false; // Prevent form submission
 //        }
 //
@@ -113,18 +113,6 @@ function validateForm() {
         websiteAddresses.push(websiteUrl);
 
     }
-    
-//     var phoneNumber = document.getElementById('exampleInputphone').value;
-//        var numericRegex = /^[0-9]+$/;
-//        
-//        if (!numericRegex.test(phoneNumber)) {
-//            document.getElementById('phoneError').innerText = 'Please enter a valid phone number (numeric characters only)';
-//            return false; // Prevent form submission
-//        } else {
-//            document.getElementById('phoneError').innerText = '';
-//            return true; // Allow form submission
-//        }
-    
 
     //   var result = upload();
 
@@ -134,39 +122,39 @@ function validateForm() {
     var developmentPlatform = document.getElementById("developmentPlatform").value;
 
     if (developmentPlatform.trim() === "") {
-        ("Please select a development platform");
+        alert("Please select a development platform");
         return false; // Prevent form submission
     }
 
     var chatbotWebhook = document.getElementById("chatbotwebhook").value;
 
     if (chatbotWebhook.trim() === "") {
-        ("Chatbot Webhook cannot be empty");
+        alert("Chatbot Webhook cannot be empty");
         return false; // Prevent form submission
     }
 
     var termsOfUseUrl = document.getElementById("urlterm").value;
     if (termsOfUseUrl.trim() === "") {
-        ("Terms of Use URL* cannot be empty");
+        alert("Terms of Use URL* cannot be empty");
         return false; // Prevent form submission
     }
 
     var privacyPolicyUrl = document.getElementById("urlprivacy").value;
     if (privacyPolicyUrl.trim() === "") {
-        ("Privacy Policy URL* cannot be empty");
+        alert("Privacy Policy URL* cannot be empty");
         return false; // Prevent form submission
     }
 
     var languagesSupported = document.getElementById("languagessupport").value;
     if (languagesSupported.trim() === "") {
-        ("Languages Supported* cannot be empty");
+        alert("Languages Supported* cannot be empty");
         return false; // Prevent form submission
     }
 
     // Bot Name validation
     var botName = document.getElementById("botname").value;
     if (botName.trim() === "") {
-        ("Bot Name cannot be empty");
+        alert("Bot Name cannot be empty");
         return false; // Prevent form submission
     }
 
@@ -181,41 +169,41 @@ function validateForm() {
     }
 
     if (selectedBotMessageTypes.length === 0) {
-        ("Please select at least one Bot Message Type");
+        alert("Please select at least one Bot Message Type");
         return false; // Prevent form submission
     }
 
     // Brand Name validation
     var brandName = document.getElementById("brandName").value;
     if (brandName.trim() === "") {
-        ("Brand Name cannot be empty");
+        alert("Brand Name cannot be empty");
         return false; // Prevent form submission
     }
 
     // Brand Name character count validation
     var charCountBrand = 100 - brandName.length;
     if (charCountBrand < 0) {
-        ("Brand Name should not exceed 100 characters");
+        alert("Brand Name should not exceed 100 characters");
         return false; // Prevent form submission
     }
 
     // Short Description validation
     var shortDescription = document.getElementById("shortdescription").value;
     if (shortDescription.trim() === "") {
-        ("Short Description cannot be empty");
+        alert("Short Description cannot be empty");
         return false; // Prevent form submission favcolors
     }
 
     var favcolors = document.getElementById("favcolors").value;
     if (favcolors.trim() === "") {
-        ("color cannot be empty");
+        alert("color cannot be empty");
         return false; // Prevent form submission favcolors
     }
 
     // Short Description character count validation
     var charCountShortDescription = 100 - shortDescription.length;
     if (charCountShortDescription < 0) {
-        ("Short Description should not exceed 100 characters");
+        alert("Short Description should not exceed 100 characters");
         return false; // Prevent form submission
     }
 
@@ -224,7 +212,7 @@ function validateForm() {
 //    var websiteInput = document.getElementById("websiteInput");
 //
 //    if (!modalImage.files.length && websiteInput.value.trim() === "") {
-//        ("Bot Logo not uploaded. Please select an image");
+//        alert("Bot Logo not uploaded. Please select an image");
 //        return false;
 //    }
 
@@ -232,8 +220,8 @@ function validateForm() {
 
     // Check if the file is selected
     if (botfileInput.value === '') {
-        // File is not selected, show an 
-        ('Please select bot logo image file.');
+        // File is not selected, show an alert
+        alert('Please select bot logo image file.');
         return false; // Prevent form submission
     }
 
@@ -241,7 +229,7 @@ function validateForm() {
 //    var websiteInput1 = document.getElementById("bannerwebsiteInput");
 //
 //    if (!modalImage1.files.length && websiteInput1.value.trim() === "") {
-//        ("Banner Image not uploaded. Please select an image");
+//        alert("Banner Image not uploaded. Please select an image");
 //        return false;
 //    }
 
@@ -249,16 +237,16 @@ function validateForm() {
 
     // Check if the file is selected
     if (bannerfileInput.value === '') {
-        // File is not selected, show an 
-        ('Please select banner image file.');
+        // File is not selected, show an alert
+        alert('Please select banner image file.');
         return false; // Prevent form submission
     }
 
 
 
 
-    // Display all form data in the  botimagesss
-    //                ("Phone numbers entered: " + phoneNumbers.join(", ") +
+    // Display all form data in the alert botimagesss
+    //                alert("Phone numbers entered: " + phoneNumbers.join(", ") +
     //                        "\nEmail addresses entered: " + emailAddresses.join(", ") +
     //                        "\nDevelopment Platform: " + developmentPlatform +
     //                        "\nChatbot Webhook: " + chatbotWebhook +
@@ -271,7 +259,7 @@ function validateForm() {
     //                        "\nWebsite URLs: " + websiteAddresses.join(", ") +
     //                        "\ncolors Image: " + favcolors +
     //                        "\nShort Description: " + shortDescription);
-    //  ("Form Submitted Sucessfully:");
+    //  alert("Form Submitted Sucessfully:");
     logMessage("Validation completed successfully.");
 
     // Allow form submission favcolors
@@ -308,28 +296,9 @@ function validateForm() {
 //}
 
 
- function validatePhoneNumber(input) {
-        // Get the input value
-        var phoneNumber = input.value;
-
-        // Define a regular expression to match numeric characters
-        var numericRegex = /^[0-9]+$/;
-
-        // Check if the input matches the numeric pattern
-        if (!numericRegex.test(phoneNumber)) {
-            // Display an error message
-            document.getElementById('phoneError').innerText = 'Please enter a valid phone number (numeric characters only)';
-            // Clear the input value (optional)
-            // input.value = '';
-        } else {
-            // Clear the error message
-            document.getElementById('phoneError').innerText = '';
-        }
-    }
 
 
-
-function addPhoneNumber889() {
+function addPhoneNumber() {
 
     try {
         var phoneNumbersContainer = document.getElementById("phoneNumbersContainer");
@@ -380,56 +349,6 @@ function addPhoneNumber889() {
 
 }
 
-function addPhoneNumber() {
-    try {
-        var phoneNumbersContainer = document.getElementById("phoneNumbersContainer");
-
-        // Create a new form for an additional phone number
-        var newPhoneNumberForm = document.createElement("div");
-        newPhoneNumberForm.classList.add("row");
-
-        // Add country select
-        var countrySelectDiv = document.createElement("div");
-        countrySelectDiv.classList.add("col-md-1", "mt-10");
-        countrySelectDiv.innerHTML = '<div class="form-group"><select class="form-select" aria-label="Default select example"><option value="AF">India</option></select></div>';
-        newPhoneNumberForm.appendChild(countrySelectDiv);
-
-        // Add input for primary phone number
-        var primaryPhoneNumberInputDiv = document.createElement("div");
-        primaryPhoneNumberInputDiv.classList.add("col-md-4");
-        primaryPhoneNumberInputDiv.innerHTML = '<label for="exampleInputPassword1">Primary phone number*</label><input type="number" class="form-control" name="primaryPhoneNumber" aria-describedby="emailHelp" placeholder="+91" required>';
-        newPhoneNumberForm.appendChild(primaryPhoneNumberInputDiv);
-
-        // Add label for primary phone number
-        var primaryPhoneNumberLabelDiv = document.createElement("div");
-        primaryPhoneNumberLabelDiv.classList.add("col-md-4");
-        primaryPhoneNumberLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for Primary phone number*</label><input type="number" class="form-control" name="labelPhoneNumber" aria-describedby="emailHelp"  required>';
-        newPhoneNumberForm.appendChild(primaryPhoneNumberLabelDiv);
-
-        // Add delete button
-        var deleteButtonDiv = document.createElement("div");
-        deleteButtonDiv.classList.add("col-md-12"); // Make it full width to appear below the other elements
-        deleteButtonDiv.innerHTML = '<button type="button" class="deleteButton">Delete</button>';
-        deleteButtonDiv.querySelector('.deleteButton').addEventListener('click', function () {
-            newPhoneNumberForm.parentNode.removeChild(newPhoneNumberForm);
-        });
-
-        // Append the delete button below other elements within newPhoneNumberForm
-        newPhoneNumberForm.appendChild(deleteButtonDiv);
-
-        // Append the new form to the container
-        phoneNumbersContainer.insertBefore(newPhoneNumberForm, phoneNumbersContainer.lastChild);
-
-        //  updateCharCountphone(primaryPhoneNumberInputDiv.querySelector('input'));
-        //  updateCharCountphone(primaryPhoneNumberInputDiv.querySelector('input'));
-        logMessage("New phone number added successfully.");
-    } catch (error) {
-        // Example log error
-        logError("Error while adding a new phone number: " + error.message);
-    }
-}
-
-
 
 
 //                        function removePhoneNumber(button) {
@@ -437,48 +356,10 @@ function addPhoneNumber() {
 //                            phoneNumberForm.parentNode.removeChild(phoneNumberForm);
 //                        }
 
+
+
+
 function addEmail() {
-    try {
-        var emailAddressesContainer = document.getElementById("emailAddressesContainer");
-
-        // Create a new form for an additional email address
-        var newEmailForm = document.createElement("div");
-        newEmailForm.classList.add("row");
-
-        // Add input for email address
-        var emailInputDiv = document.createElement("div");
-        emailInputDiv.classList.add("col-md-4");
-        emailInputDiv.innerHTML = '<label for="exampleInputPassword1">Other Email ID</label><input type="email" class="form-control" name="emailAddress" aria-describedby="emailHelp" placeholder="@">';
-        newEmailForm.appendChild(emailInputDiv);
-
-        // Add label for email address
-        var emailLabelDiv = document.createElement("div");
-        emailLabelDiv.classList.add("col-md-4");
-        emailLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other email ID</label><input type="email" class="form-control" name="labelemailAddress" aria-describedby="emailHelp" placeholder="">';
-        newEmailForm.appendChild(emailLabelDiv);
-
-        // Add delete button
-        var deleteButtonDiv = document.createElement("div");
-        deleteButtonDiv.classList.add("col-md-12");
-        deleteButtonDiv.innerHTML = '<button type="button" class="deleteButton1">Delete</button>';
-        deleteButtonDiv.querySelector('.deleteButton1').addEventListener('click', function () {
-            newEmailForm.parentNode.removeChild(newEmailForm);
-        });
-        newEmailForm.appendChild(deleteButtonDiv);
-
-        // Append the new form to the container
-        emailAddressesContainer.insertBefore(newEmailForm, emailAddressesContainer.lastChild);
-
-        logMessage("New email address added successfully.");
-    } catch (error) {
-        logError("Error while adding a new email address: " + error.message);
-    }
-}
-
-
-
-
-function addEmail90() {
     try {
 
         var emailAddressesContainer = document.getElementById("emailAddressesContainer");
@@ -553,7 +434,7 @@ function addWebsite() {
     // Add label for website URL
     var websiteLabelDiv = document.createElement("div");
     websiteLabelDiv.classList.add("col-md-4");
-    websiteLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other website URL</label><input type="url" class="form-control" name="labelwebsiteUrl" aria-describedby="emailHelp" placeholder="">';
+    websiteLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other website URL</label><input type="url" class="form-control" name="websiteUrl" aria-describedby="emailHelp" placeholder="">';
     newWebsiteForm.appendChild(websiteLabelDiv);
 
     var deleteButtonDiv = document.createElement("div");
