@@ -64,7 +64,7 @@ public class inserDB extends HttpServlet {
         
         String User="ChatBot";
                      dbcon db = new dbcon();
-                db.getCon("userapilogin");
+                db.getCon("VNS_RCS");
                  String msg = "insert into chatp (User,Msg,S_R)values('"+User+"','"+message+"','S');";
             
              int rs = db.setUpdate(msg);
