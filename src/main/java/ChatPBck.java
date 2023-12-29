@@ -74,9 +74,9 @@ public class ChatPBck extends HttpServlet {
         String S_R = "N/A";
         String Msg_ID = "N/A";
 
-        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from  ChatP  where S_R like 'R' order by Time desc;";
+        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from  chatp  where S_R like 'R' order by Time desc;";
         dbcon db = new dbcon();
-        db.getCon("userapilogin");
+        db.getCon("VNS_RCS");
         ResultSet rs = db.getResult(all_data);
 
         JSONObject recObj = new JSONObject();
@@ -145,8 +145,8 @@ public class ChatPBck extends HttpServlet {
         String RMsg_ID = null;
 
         dbcon db = new dbcon();
-        db.getCon("userapilogin");
-        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from ChatP order by Time asc;";
+        db.getCon("VNS_RCS");
+        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from chatp order by Time asc;";
 
         ResultSet rs = db.getResult(all_data);
 
