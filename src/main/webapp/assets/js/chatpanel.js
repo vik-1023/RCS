@@ -49,7 +49,7 @@ const formattedTime = now.toLocaleString();
 
                 } else if (resp.startsWith("alreadySentMessage")) {
                     
-                    console.error("alreadySentMessage",resp);
+                    
 
                 }
 
