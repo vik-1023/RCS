@@ -35,11 +35,11 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+<!--  <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="index.html"><img src="assets/img/logo.png"></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+       Uncomment below if you prefer to use an image logo 
+       <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -51,7 +51,7 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       
-      </nav><!-- .navbar -->
+      </nav> .navbar 
 		<div class="dropdown">
 		  <button class="btn btn-secondary1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 			<img src="assets/img/profile_img.png">
@@ -63,7 +63,8 @@
 		  </ul>
 		</div>
     </div>
-  </header><!-- End Header -->
+  </header> End Header -->
+<%@include file="header.jsp" %>
 
   <!-- ======= Hero Section ======= -->
   <section style="background-color: #eee;">

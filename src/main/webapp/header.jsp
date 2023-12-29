@@ -41,7 +41,7 @@
             </div>
         </header><!-- End Header -->
 
-        <!--        <script>
+                <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         document.getElementById('createnew-link').addEventListener('click', function () {
                             console.log("Clicked on createnew-link");
@@ -102,9 +102,9 @@
         //                 document.getElementById('brandsheader').classList.remove('active');
         //            });
                     });
-                </script>-->
+                </script>
 
-        <script>
+<!--        <script>
             document.addEventListener('DOMContentLoaded', function () {
                 // Handle the initial state
                 document.getElementById('createnew-link').classList.add('active');
@@ -140,13 +140,9 @@
                     }
                 });
             }
-        </script>
+        </script>-->
 
-        <style>
-            
-
-
-        </style>
+       
 
     </body>
 </html>
