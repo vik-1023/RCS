@@ -1,6 +1,6 @@
 <%@page import="db.dbcon"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="user.dbcon"%>
+<%@page import="db.dbcon"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +48,7 @@
 		   	<!-- Search form -->
 	    <label class="s_bot" for="search">Search Brands</label>
 		<div class="active-purple-3 active-purple-4 mb-4">
-		  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+		  <input class="form-control" type="search" name="search" aria-label="search" id="myInput">
 		</div>
 		</div>
 	   <div class="col-md-12 col-sm-12 colxs-12 table-responsive">
