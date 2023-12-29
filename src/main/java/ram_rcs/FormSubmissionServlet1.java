@@ -108,8 +108,8 @@ public class FormSubmissionServlet1 extends HttpServlet {
         //  out.println("fileName" + fileName);
         LOGGER.log(Level.INFO, "File uploaded successfully: {0}", fileName);
 
-        String uploadDir = "/usr/local/apache-tomcat-9.0.84/webapps/RCS3/src/main/webapp/image";
-
+        String uploadDir = "C:/Users/Ram Ishwer Kumar/Documents/NetBeansProjects/RCS/Ram/";
+//C:/Users/Ram Ishwer Kumar/Documents/NetBeansProjects/RCS/Ram/
         // Save the file to the server
         Path filePath = Paths.get(uploadDir, fileName);
 
@@ -125,7 +125,7 @@ public class FormSubmissionServlet1 extends HttpServlet {
         //out.println("fileName" + fileName1);
         LOGGER.log(Level.INFO, "File uploaded successfully: {0}", fileName1);
 
-        String uploadDir1 = "/usr/local/apache-tomcat-9.0.84/webapps/RCS3/src/main/webapp/image";
+        String uploadDir1 = "C:/Users/Ram Ishwer Kumar/Documents/NetBeansProjects/RCS/Ram/";
 
         // Save the file to the server
         Path filePath1 = Paths.get(uploadDir1, fileName1);

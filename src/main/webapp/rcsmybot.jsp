@@ -194,7 +194,7 @@
 
                     <h3 class="title" for="image" required>Bot Logo*</h3>
                     <p>Provide a logo for your bot that will be displayed in connection with the bot's name.</p>
-                    <img src="C:/Users/Ram Ishwer Kumar/Documents/ImageFolder/sim.jpg" alt="Image" id="botImage" name="imagess" accept="image/*" ><br><br>
+                    <img src="assets/img/botLogoUloadSize (1).png" alt="Image" id="botImage" name="imagess" accept="image/*" ><br><br>
 
                     <button class="upload-b" type="button" onclick="openModal()">Upload</button>
 
@@ -215,7 +215,7 @@
                     <h3 class="title" for="bannerimage">Banner Image*</h3>
                     <p>Provide a brand image for your bot that will be displayed in the bot's 'Info & options' screen.<br>
                         Note: Your logo will be overlaid on the Banner Image (bottom centre) so be careful with your design.</p>
-                    <img id="bannerImage" src="C:/Users/Ram Ishwer Kumar/Documents/ImageFolder/sim.jpg" alt="Image"><br><br>
+                    <img id="bannerImage" src="assets/img/botBackgroundImageSize.png" alt="Image"><br><br>
                     <button class="upload-b" type="button" onclick="openModal1()">Upload</button>
 
                     <!--             The modal for banner image selection -->
@@ -318,7 +318,7 @@
                                 var goingButton = document.getElementById('goingButton');
                                 goingButton.addEventListener('click', function () {
                                     // Redirect to new.jsp when the button is clicked
-                                    window.location.href = 'new.jsp';
+                                    window.location.href = 'CreateNewRcs.jsp';
                                 });
                                 // Example log message
                                 logMessage("Custom popup displayed successfully.");
@@ -385,6 +385,10 @@
             color: #fff;
             border: none;
             cursor: pointer;
+        }
+        #bannerImage{
+            width: 342px;
+            height: 173px;
         }
     </style>
 
