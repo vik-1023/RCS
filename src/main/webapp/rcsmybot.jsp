@@ -68,7 +68,7 @@
     <!-- action="Database2.jsp"  FormSubmissionServlet1 -->
 
 
-    <form id="combinedForm" action="FormSubmissionServlet1" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <form id="combinedForm" action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
 
 
         <section id="hero" class="d-flex align-items-center">
