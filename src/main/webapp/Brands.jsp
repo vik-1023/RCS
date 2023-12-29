@@ -1,3 +1,6 @@
+<%@page import="db.dbcon"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="db.dbcon"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,69 +48,62 @@
 		   	<!-- Search form -->
 	    <label class="s_bot" for="search">Search Brands</label>
 		<div class="active-purple-3 active-purple-4 mb-4">
-		  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+		  <input class="form-control" type="search" name="search" aria-label="search" id="myInput">
 		</div>
 		</div>
 	   <div class="col-md-12 col-sm-12 colxs-12 table-responsive">
 	   <h1 class="brand">Brands</h1>
 		<div class="main-table">
-       <table class="table">
-		  <thead class="table-top">
-			<tr class="bg-color">
-			  <th scope="col">Brands Submitted</th>
-			  <th scope="col"></th>
-			  <th scope="col"></th>
-			  <th scope="col"></th>
-			   <th scope="col"></th>
-			
-			</tr>
-		  </thead>
-		  <tbody class="table-data">
-			<tr>
-			  <th scope="row">Brand Name</th>
-			  <td><b>Industry Type</b></td>
-			 
-			  <td><b>Status</b></td>
-			   <td><b>Action</b></td>
-			    
-			</tr>
-			<tr>
-			  <th scope="row"><span class="name-img"><img src="assets/img/table-img.jpg">Name</span></th> 
-			  <td>Virtuoso Netsoft</td>
-			  <td><span class="Creation">Creation Rejected</span></td>
-			   <td><span class="view">View Details</span></td>
-			   
-			</tr>
-		<tr>
-			  <th scope="row"><span class="name-img"><img src="assets/img/table-img.jpg">Name</span></th> 
-			  <td>Virtuoso Netsoft</td>
-			  <td><span class="Creation">Creation Rejected</span></td>
-			   <td><span class="view">View Details</span></td>
-			   
-			</tr>
-			<tr>
-			  <th scope="row"><span class="name-img"><img src="assets/img/table-img.jpg">Name</span></th> 
-			  <td>Virtuoso Netsoft</td>
-			  <td><span class="Creation">Creation Rejected</span></td>
-			   <td><span class="view">View Details</span></td>
-			   
-			</tr>
-			<tr>
-			  <th scope="row"><span class="name-img"><img src="assets/img/table-img.jpg">Name</span></th> 
-			  <td>Virtuoso Netsoft</td>
-			  <td><span class="Creation">Creation Rejected</span></td>
-			   <td><span class="view">View Details</span></td>
-			   
-			</tr>
-			<tr>
-			  <th scope="row"><span class="name-img"><img src="assets/img/table-img.jpg">Name</span></th> 
-			  <td>Virtuoso Netsoft</td>
-			  <td><span class="Creation">Creation Rejected</span></td>
-			   <td><span class="view">View Details</span></td>
-			   
-			</tr>
-		  </tbody>
-		</table>
+                   <table class="table">
+                  <thead class="table-top">
+                        <tr class="bg-color">
+                          <th scope="col">Brands Submitted</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                           <th scope="col"></th>
+                        
+                        </tr>
+                  </thead>
+                  <table class="table-data">
+                  <tbody id="myTable" class="table-data">
+                        <tr>
+                          <th scope="row">Brand Name</th>
+                          <td><b>Industry Type</b></td>
+                         
+                          <td><b>Status</b></td>
+                           <td><b>Action</b></td>
+                            
+                        </tr>
+                         <%
+			 String Industry_Type=null;
+                                   String all_data = "select distinct(brand_name),status from rbm_table;";
+                           dbcon db = new dbcon();
+                          db.getCon("VNS_RCS");
+                                 ResultSet rs = db.getResult(all_data);
+
+                                 while (rs.next()) {
+                                    String sts = rs.getString(2);
+				     String Brand_Name = rs.getString(1);
+            if (sts.equals("true")) {
+                sts = "Verified";
+            } else {
+                sts = "Under Review";
+            }
+    %>
+            <tr>
+                <td><%=Brand_Name%></td>
+                <td><%= Industry_Type%></td>
+                <td><%=sts%></td>
+                <td><button type="button" class="button del" onclick="del()">Details</button></td>
+            </tr>
+    <%
+        }
+    %>
+                 
+                  </tbody>
+                 </table>
+                </table>
       </div>
 	  </div>
 	  </div>
@@ -117,6 +113,25 @@
  -->
      
     </div>
+    
+      <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+                            $(document).ready(
+                                    function () {
+                                        $("#myInput").on(
+                                                "keyup",
+                                                function () {
+                                                    var value = $(this).val().toLowerCase();
+                                                    $("#myTable tr").filter(
+                                                            function () {
+                                                                $(this).toggle(
+                                                                        $(this).text().toLowerCase()
+                                                                        .indexOf(value) > -1);
+                                                            });
+                                                });
+                                    });
+        </script>
   </section><!-- End Hero -->
 
 
