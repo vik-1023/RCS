@@ -1,5 +1,5 @@
 <%@page import="java.sql.ResultSet"%>
-<%@page import="user.dbcon"%>
+<%@page import="db.dbcon"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,8 +64,7 @@
                         
                         </tr>
                   </thead>
-                  <table class="table-data" >
-                       <tr>
+                   <tr class="table-data">
                           <th scope="row">Brand Name</th>
                           <td><b>Industry Type</b></td>
                          
@@ -73,7 +72,10 @@
                            <td><b>Action</b></td>
                             
                         </tr>
-                  <tbody id="myTable" class="table-data">
+                   
+                   <tbody id="myTable" class="table-data">
+                      
+                 
                        
                          <%
 			 String Industry_Type=null;
@@ -92,10 +94,10 @@
             }
     %>
             <tr>
-                <td><%=Brand_Name%></td>
+                <td scope="row"><%=Brand_Name%></td>
                 <td><%= Industry_Type%></td>
-                <td><%=sts%></td>
-                <td><button type="button" class="button del" onclick="del()">Details</button></td>
+                <td ><span class="Creation"><%=sts%></span></td>
+                <td  > <span onclick="del()" type="button" class="view">View Details</span> </td>
             </tr>
     <%
         }
@@ -103,7 +105,7 @@
                  
                   </tbody>
                  </table>
-                </table>
+               
       </div>
 	  </div>
 	  </div>
@@ -117,6 +119,9 @@
       <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
+             function del(){
+                 alert("Task Pending !!");
+             }
                             $(document).ready(
                                     function () {
                                         $("#myInput").on(
