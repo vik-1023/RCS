@@ -68,7 +68,13 @@ public class inserDB extends HttpServlet {
                  String msg = "insert into chatp (User,Msg,S_R)values('"+User+"','"+message+"','S');";
             
              int rs = db.setUpdate(msg);
-             pout.print("DBentered");
+            int rowsAffected = db.setUpdate(msg);
+        if (rowsAffected != 0) {
+            pout.print("DBentered");
+            
+        } else {
+            pout.print("Error entering into DB");
+        }
     }
 
     /**
