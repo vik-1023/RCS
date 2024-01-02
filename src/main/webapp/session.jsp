@@ -1,10 +1,19 @@
  
 <%
 
-    HttpSession s = request.getSession();
-    String username = "ram";
+HttpSession s = request.getSession(false);
+String username = null;
 
-    s.setAttribute("Dusername", username);
+ 
+    username = (String) s.getAttribute("Dusername");
+
+    if (username == null) {
+        // No valid username found, and not on the login page, redirect to login page
+        response.sendRedirect("Login.jsp");
+    }
+
+
+
 
 
 %>

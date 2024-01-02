@@ -4,8 +4,8 @@ package ram_rcs;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
 import db.dbcon;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -108,7 +109,9 @@ public class FormSubmissionServlet1 extends HttpServlet {
         //  out.println("fileName" + fileName);
         LOGGER.log(Level.INFO, "File uploaded successfully: {0}", fileName);
 
-        String uploadDir = "D:/RCS/RCS/Ram/";
+        ServletContext servletContext = request.getServletContext();
+        String uploadDir = servletContext.getRealPath(File.separator + "assets" + File.separator + "img" + File.separator);
+
 //C:/Users/Ram Ishwer Kumar/Documents/NetBeansProjects/RCS/Ram/   D:/RCS/RCS/Ram
         // Save the file to the server
         Path filePath = Paths.get(uploadDir, fileName);
@@ -125,7 +128,7 @@ public class FormSubmissionServlet1 extends HttpServlet {
         //out.println("fileName" + fileName1);
         LOGGER.log(Level.INFO, "File uploaded successfully: {0}", fileName1);
 
-        String uploadDir1 = "D:/RCS/RCS/Ram/";
+        String uploadDir1 = servletContext.getRealPath(File.separator + "assets" + File.separator + "img" + File.separator);
 
         // Save the file to the server
         Path filePath1 = Paths.get(uploadDir1, fileName1);

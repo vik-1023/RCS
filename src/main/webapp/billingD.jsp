@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<a href="session.jsp"></a>
+ 
+<%@include file="session.jsp" %>
 <html lang="en">
 
     <head>
