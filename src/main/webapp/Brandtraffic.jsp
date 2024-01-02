@@ -43,7 +43,7 @@
    
        String sql = "select distinct Brands from tester_invite where DateRange  between  '" + fdate + " 00:00:00' and '" + tdate + " 23:59:59' and username='"+username+"';";
 
-
+     logger.info("Brands Sql:"+ sql);
             dbcon db = new dbcon();
             db.getCon("VNS_RCS");
             ResultSet rs = db.getResult(sql);
@@ -56,8 +56,8 @@
 
             obj.put("Array1", jsonArray);
             out.print(obj);
-
-            db.closeConection();
+          
+          db.closeConection();
 
             // Log a message indicating the successful execution of the code
             logger.info("Query executed successfully.");
