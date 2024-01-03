@@ -31,7 +31,8 @@
 
         // String sql = "select distinct Templates from My_Billing where DateRange  between  '" + fdate + "' and '" + tdate + "' and Bots like '" + BotN + "' and username = '"+username+"';";
         String sql = "select distinct Templates from tester_invite where DateRange  between  '" + fdate + " 00:00:00' and '" + tdate + " 23:59:59' and Bots like '" + BotN + "' and username = '" + username + "';";
-
+         logger.info("templatetraffic sql:" + sql);
+         
         dbcon db = new dbcon();
         db.getCon("VNS_RCS");
         ResultSet rs = db.getResult(sql);

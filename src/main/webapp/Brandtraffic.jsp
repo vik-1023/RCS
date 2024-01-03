@@ -43,6 +43,7 @@
    
        String sql = "select distinct Brands from tester_invite where DateRange  between  '" + fdate + " 00:00:00' and '" + tdate + " 23:59:59' and username='"+username+"';";
 
+       logger.info("Brandtraffic sql:"+ sql);
 
             dbcon db = new dbcon();
             db.getCon("VNS_RCS");
