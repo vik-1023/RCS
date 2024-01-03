@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
- 
+package com.mycompany.chatbot;
 
 import db.dbcon;
 import java.io.IOException;
@@ -74,9 +74,9 @@ public class ChatPBck extends HttpServlet {
         String S_R = "N/A";
         String Msg_ID = "N/A";
 
-        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from  chatp  where S_R like 'R' order by Time desc;";
+        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from  ChatP  where S_R like 'R' order by Time desc;";
         dbcon db = new dbcon();
-        db.getCon("VNS_RCS");
+        db.getCon("userapilogin");
         ResultSet rs = db.getResult(all_data);
 
         JSONObject recObj = new JSONObject();
@@ -120,7 +120,7 @@ public class ChatPBck extends HttpServlet {
             Logger.getLogger(ChatPBck.class.getName()).log(Level.SEVERE, null, ex);
             out.print("Error");
         }
-
+  db.closeConection();
     }
 
     /**
@@ -145,8 +145,8 @@ public class ChatPBck extends HttpServlet {
         String RMsg_ID = null;
 
         dbcon db = new dbcon();
-        db.getCon("VNS_RCS");
-        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from chatp order by Time asc;";
+        db.getCon("userapilogin");
+        String all_data = "select Time,User,Msg,Msg_ID,Status,S_R from ChatP order by Time asc;";
 
         ResultSet rs = db.getResult(all_data);
 
@@ -183,6 +183,7 @@ public class ChatPBck extends HttpServlet {
         } catch (Exception ex) {
             System.out.println("Exception" + ex);
         }
+        db.closeConection();
 
     }
 
