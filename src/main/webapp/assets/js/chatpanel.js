@@ -49,7 +49,7 @@ const formattedTime = now.toLocaleString();
 
                 } else if (resp.startsWith("alreadySentMessage")) {
                     
-                    
+                    console.error("alreadySentMessage",resp);
 
                 }
 
@@ -94,7 +94,7 @@ var User = "ChatBot";
                 if (resp.startsWith("DBentered")) {
                     send_msg(message,User,Time);
 
-
+                      
 
 
                 } else {
@@ -251,7 +251,7 @@ function loadChat() {
                     }
 
                 } else if (resp.startsWith("alreadySentMessage")) {
-                    console.error("alreadySentMessage:");
+                     
                     
                 }
 
