@@ -1,12 +1,16 @@
-        /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
+ 
 
 import db.dbcon;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +41,7 @@ public class inserDB extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet inserDB</title>");            
+            out.println("<title>Servlet inserDB</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet inserDB at " + request.getContextPath() + "</h1>");
@@ -58,24 +62,32 @@ public class inserDB extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         PrintWriter pout = response.getWriter();
-        String message=request.getParameter("message");
+        String message = request.getParameter("message");
+       
+        String User = "ChatBot";
+       
         
-        
-        String User="ChatBot";
-                     dbcon db = new dbcon();
-                db.getCon("VNS_RCS");
-                 String msg = "insert into chatp (User,Msg,S_R)values('"+User+"','"+message+"','S');";
-            
-             int rs = db.setUpdate(msg);
-            int rowsAffected = db.setUpdate(msg);
+      
+       
+
+        dbcon db = new dbcon();
+        db.getCon("userapilogin");
+     
+
+   
+ String msg = "INSERT INTO chatp (User, Msg, S_R ) VALUES ('" + User + "', '" + message + "', 'S');";
+        int rowsAffected = db.setUpdate(msg);
         if (rowsAffected != 0) {
             pout.print("DBentered");
             
         } else {
             pout.print("Error entering into DB");
         }
+
     }
+     
 
     /**
      * Handles the HTTP <code>POST</code> method.
