@@ -3,7 +3,7 @@
     Created on : 7 Dec, 2023, 8:09:58 PM
     Author     : Admin
 --%>
-
+<%@include file="session.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,24 +11,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>RCS</title>
         <%@include file="common_jcb/jcb.jsp"%>
-
+        
         <style>
             .c-f{
                 color: white;
-                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+                 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
             }
             div.card {
-
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                text-align: center;
-            }
-
-
+ 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+            
+            
         </style>
     </head>
     <body>
-
-
+     
+        
         <div class="container-fluid c-f">
             <div class="row">
                 <div class="col col-3 mt-3">
@@ -180,9 +180,9 @@
                             </form> 
                         </div>
                     </div> 
-
-
-                    <div class="card mt-3 mb-3">
+                    
+                    
+                        <div class="card mt-3 mb-3">
                         <div class="card-header bg-warning text-center">
                             <h3>Open a URL</h3> 
                             <div id="test11">
