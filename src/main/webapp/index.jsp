@@ -3,7 +3,7 @@
     Created on : 7 Dec, 2023, 8:09:58 PM
     Author     : Admin
 --%>
-<%@include file="session.jsp" %>
+<%--<%@include file="session.jsp" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

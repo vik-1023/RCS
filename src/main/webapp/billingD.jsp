@@ -1,6 +1,6 @@
 <!DOCTYPE html>
  
-<%@include file="session.jsp" %>
+<%--<%@include file="session.jsp" %>--%>
 <html lang="en">
 
     <head>
