@@ -1,31 +1,26 @@
+package user;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
-
 
 import db.dbcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
- 
 
 /**
  *
- * @author Admin
+ * @author Ram Ishwer Kumar
  */
-public class SighupD1 extends HttpServlet {
-    private static final Logger logger = Logger.getLogger(SendMailServlet.class.getName());
-
+public class LoginNow extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +39,10 @@ public class SighupD1 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SighupD1</title>");
+            out.println("<title>Servlet LoginServletPage</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SighupD1 at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoginServletPage at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,53 +60,6 @@ public class SighupD1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        PrintWriter out = response.getWriter();
-
-//        String LogDet = "abc";
-//        String LogPass = "123";
-//        String LogOTp = "000000";
-        //  request.getParameter("Username");
-        String LogDet = request.getParameter("Username");
-        String LogPass = request.getParameter("Pass");
-        String LogOTp = request.getParameter("OTP_VAL");
-        //  String Generated_otp = "N/A";
-      logger.info(LogDet);
-        logger.info(LogOTp);
-
-           // String ParaOTp="000000";
-          HttpSession se12 = request.getSession(false);
-         String ParaOTp = (String) se12.getAttribute("Genotp");
-         
-        
-         String Login_data = "insert into loginrbm (Username ,Pass) values ('" + LogDet + "',MD5('"+ LogPass +"'))";
-      //  "insert into LoginRbm (Username ,Pass) values ('iqbal@zestinsolutions.com',PassMD5('123456'))";
-        dbcon db = new dbcon();
-        
-        db.getCon("VNS_RCS");
-        //   select Username ,Pass from LoginRbm where Username = 'iqbal@zestinsolutions.com' and Pass=MD5('Iqbal');
-        
-            if(LogOTp.equals(ParaOTp)){
-        try {
-
-            int i = db.setUpdate(Login_data);
-            out.print("Rows updated:");
-             logger.info("Rows updated:");
-          
-        } catch (Exception e) {
-            out.println(e);
-            out.print("Error In Updation of Record");
-            logger.info("Error In Updation of Record");
-        }
-    }else{
-               out.print("Wrong OTP"); 
-               logger.info("Wrong OTP");
-               
-            }
-    
-        db.closeConection();
-        logger.info("Connection closed");
-
     
     }
 
@@ -126,17 +74,36 @@ public class SighupD1 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+          response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+
+           
+          
+
+            if (email.equals("ram@virtuosonetsoft.in") && password.equals("Ramishwer@123")) {
+                HttpSession session = request.getSession();
+                session.setAttribute("name", "VNS");
+                session.setAttribute("email", email);
+
+//                RequestDispatcher rs1 = request.getRequestDispatcher("toss");
+//                rs1.forward(request, response);
+               response.sendRedirect("CreateNewRcs");
+            } else {
+                out.println("Username or Password incorrect");
+                RequestDispatcher rs1 = request.getRequestDispatcher("Login.jsp");
+                rs1.include(request, response);
+            }
+       
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+  
     @Override
     public String getServletInfo() {
-        return "Short description"; 
+        return "Short description";
     }// </editor-fold>
 
 }

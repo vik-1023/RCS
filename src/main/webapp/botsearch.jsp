@@ -42,7 +42,7 @@
          //   String sql = "  select distinct Bots from  My_Billing   where DateRange  between  '" + fdate + "' and '" + tdate + "' and Brands like '" + BrandN + "' and username = '" + username + "';";
 
       String sql = "select distinct Bots from tester_invite where DateRange between  '" + fdate + " 00:00:00' and '" + tdate + " 23:59:59' and Brands like '" + BrandN + "' and username = '" + username + "';";
-       logger.info("botsearch sql:" + sql);
+
          
             dbcon db = new dbcon();
             db.getCon("VNS_RCS");

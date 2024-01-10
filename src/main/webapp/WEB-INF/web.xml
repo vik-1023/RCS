@@ -32,6 +32,10 @@
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>ram_rcs.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginNow</servlet-name>
+        <servlet-class>ram_rcs.LoginNow</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>send_Tester_Invite</servlet-name>
         <url-pattern>/send_Tester_Invite</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginNow</servlet-name>
+        <url-pattern>/LoginNow</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

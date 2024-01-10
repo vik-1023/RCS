@@ -23,7 +23,7 @@ public class LoginD1 extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         // Get user input
-        String Username =  request.getParameter("Username");;
+        String Username =  request.getParameter("Username");
         String Pass =request.getParameter("Pass");
         
 //        String Username  = "iqbal@zestinsolutions.com";
@@ -69,6 +69,8 @@ public class LoginD1 extends HttpServlet {
             response.addCookie(userCookie);
                      logger.info("record found in db ");
             // Redirect to a welcome page
+            
+            
              out.println("Correct");
         }else if(Dusername.equals(Dpassword) && Dpassword != null && Dusername != null && Status == false){
            

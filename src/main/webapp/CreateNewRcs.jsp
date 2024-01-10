@@ -38,43 +38,54 @@
     <body>
 
         <!-- ======= Header ======= -->
-<!--        <header id="header" class="fixed-top">
-            <div class="container d-flex align-items-center justify-content-between">
-                <h1 class="logo"><a href="index.html"><img src="assets/img/logo.png"></a></h1>
-                 Uncomment below if you prefer to use an image logo 
-                 <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">MY BOTS</a></li>
-                        <li><a class="nav-link scrollto" href="#about">MY BRANDS</a></li>
-                        <li><a class="nav-link scrollto" href="#services">MY CAMPAIGNS</a></li>
-                        <li><a class="nav-link scrollto o" href="#portfolio">API</a></li>
-                        <li><a class="nav-link scrollto" href="#team">MY BILLING</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-
-                </nav> .navbar 
-                <div class="dropdown">
-                    <button class="btn btn-secondary1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/img/profile_img.png">
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header> End Header -->
-  <%@include file="header.jsp" %>
+        <!--        <header id="header" class="fixed-top">
+                    <div class="container d-flex align-items-center justify-content-between">
+                        <h1 class="logo"><a href="index.html"><img src="assets/img/logo.png"></a></h1>
+                         Uncomment below if you prefer to use an image logo 
+                         <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+        
+                        <nav id="navbar" class="navbar">
+                            <ul>
+                                <li><a class="nav-link scrollto active" href="#hero">MY BOTS</a></li>
+                                <li><a class="nav-link scrollto" href="#about">MY BRANDS</a></li>
+                                <li><a class="nav-link scrollto" href="#services">MY CAMPAIGNS</a></li>
+                                <li><a class="nav-link scrollto o" href="#portfolio">API</a></li>
+                                <li><a class="nav-link scrollto" href="#team">MY BILLING</a></li>
+                            </ul>
+                            <i class="bi bi-list mobile-nav-toggle"></i>
+        
+                        </nav> .navbar 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/profile_img.png">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header> End Header -->
+        <%@include file="header.jsp" %>
         <!-- ======= Hero Section ======= -->
         <section id="hero1" class="d-flex align-items-center">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row justify-content-left">
 
                     <div class="col-md-4 col-sm-4 col-xs-12">
+                       
+                        <%                         if (username.equals("ram@virtuosonetsoft")) {
+                        %>
                         <button type="button" class="btn btn-secondary" onclick="openJspPage()">Create New RCS Bot</button><br>
+                        <%
+                        } else {
+                        %>
+                     
+                        <%
+                            }
+                        %>
+
                         <!-- Search form -->
                         <label class="s_bot" for="search">Search Bots</label>
                         <div class="active-purple-3 active-purple-4 mb-4">
@@ -183,8 +194,8 @@
                                 // Replace 'your-page.jsp' with the actual path to your JSP page
                                 window.location.href = 'rcsmybot.jsp';
                             }
-                            
-                            
+
+
                             document.addEventListener('DOMContentLoaded', function () {
                                 const searchInput = document.getElementById('searchInput');
 
