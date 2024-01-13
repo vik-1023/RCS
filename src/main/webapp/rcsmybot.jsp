@@ -146,7 +146,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="exampleInputPassword1">Label for Primary phone number*</label>
-                        <input type="number" class="form-control" id="exampleInputphone" name="primaryPhoneNumber" aria-describedby="emailHelp"  required>
+                        <input type="text" class="form-control" id="exampleInputphone" name="labelPhoneNumber" aria-describedby="emailHelp"  required>
                         <!--                            <p class="chter">25 Characters left</p>-->
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="exampleInputPassword1">Label for primary email id</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" name="emailAddress" aria-describedby="emailHelp" placeholder="">
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="labelemailAddress" aria-describedby="emailHelp" placeholder="">
                         <!--                            <p class="chter">25 Characters left</p>-->
                     </div>
                     <!--                                        <span class="addphone">-->
@@ -181,7 +181,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="exampleInputPassword1">Label for primary website</label>
-                        <input type="url" class="form-control" id="exampleInputEmail1"  name="websiteUrl" aria-describedby="emailHelp" placeholder="">
+                        <input type="url" class="form-control" id="exampleInputEmail1"  name="labelwebsiteUrl" aria-describedby="emailHelp" placeholder="">
                         <!--                            <p class="chter">25 Characters left</p>-->
                     </div>
 
@@ -355,7 +355,7 @@
                             var formData = new FormData(this);
 
                             var xhr = new XMLHttpRequest();
-                            xhr.open("POST", "FormSubmissionServlet1", true);
+                            xhr.open("POST", "FormSubmissionServlet", true);
                             xhr.onreadystatechange = function () {
                                 if (xhr.readyState === 4) {
                                     if (xhr.status === 200) {

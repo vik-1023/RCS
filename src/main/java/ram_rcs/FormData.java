@@ -38,6 +38,38 @@ public class FormData implements Serializable {
     private String Transactional;
     private String Promotional;
     // Getter
+    
+     private String[] labelPhoneNumber;
+     private String[] labelemailAddress;
+     private String[] labelwebsiteUrl;
+     
+      // Getter and Setter for labelPhoneNumber
+    public String[] getLabelPhoneNumber() {
+        return labelPhoneNumber;
+    }
+
+    public void setLabelPhoneNumber(String[] labelPhoneNumber) {
+        this.labelPhoneNumber = labelPhoneNumber;
+    }
+
+    // Getter and Setter for labelemailAddress
+    public String[] getLabelemailAddress() {
+        return labelemailAddress;
+    }
+
+    public void setLabelemailAddress(String[] labelemailAddress) {
+        this.labelemailAddress = labelemailAddress;
+    }
+
+    // Getter and Setter for labelwebsiteUrl
+    public String[] getLabelwebsiteUrl() {
+        return labelwebsiteUrl;
+    }
+
+    public void setLabelwebsiteUrl(String[] labelwebsiteUrl) {
+        this.labelwebsiteUrl = labelwebsiteUrl;
+    }
+     
 
     public String getPromotional() {
         return Promotional;

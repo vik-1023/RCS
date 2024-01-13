@@ -25,6 +25,7 @@ public class LoginD1 extends HttpServlet {
         // Get user input
         String Username =  request.getParameter("Username");
         String Pass =request.getParameter("Pass");
+        String UserType="N/a";
         
 //        String Username  = "iqbal@zestinsolutions.com";
 //        String Pass ="00";
@@ -33,7 +34,7 @@ public class LoginD1 extends HttpServlet {
         String Dpassword =  "N/A";
         boolean Status=false;
          
-          String Login_data = "SELECT Username, Pass, Status FROM loginrbm   WHERE Username ='"+ Username +"' AND Pass = MD5('"+Pass+"')AND Status=true;";
+          String Login_data = "SELECT Username,UserType, Pass, Status FROM loginrbm   WHERE Username ='"+ Username +"' AND Pass = MD5('"+Pass+"')AND Status=true;";
       //    out.println(Login_data);
             dbcon db = new dbcon();
         db.getCon("VNS_RCS");
@@ -47,6 +48,7 @@ public class LoginD1 extends HttpServlet {
                 Dusername = rs.getString("Username");
                 Dpassword = rs.getString("Pass");
                 Status = rs.getBoolean("Status");
+                 UserType = rs.getString("UserType");
                  logger.info("Record found");
       //     out.println("if");
             } 
@@ -64,6 +66,7 @@ public class LoginD1 extends HttpServlet {
             // Create a session cookie      
              HttpSession se12 = request.getSession();
              se12.setAttribute("Dusername", Dusername);
+             se12.setAttribute("UserType", UserType);
             Cookie userCookie = new Cookie("Dusername", Dusername);
             userCookie.setMaxAge(30 * 60); // Set cookie expiration time (in seconds)
             response.addCookie(userCookie);

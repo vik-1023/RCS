@@ -322,7 +322,7 @@ function addPhoneNumber() {
         // Add label for primary phone number
         var primaryPhoneNumberLabelDiv = document.createElement("div");
         primaryPhoneNumberLabelDiv.classList.add("col-md-4");
-        primaryPhoneNumberLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other phone number*</label><input type="number" class="form-control" name="primaryPhoneNumber" aria-describedby="emailHelp" placeholder="+91" required>';
+        primaryPhoneNumberLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other phone number*</label><input type="text" class="form-control" name="labelPhoneNumber" aria-describedby="emailHelp" placeholder="+91" required>';
         newPhoneNumberForm.appendChild(primaryPhoneNumberLabelDiv);
 
         // Add delete button
@@ -377,7 +377,7 @@ function addEmail() {
         // Add label for email address
         var emailLabelDiv = document.createElement("div");
         emailLabelDiv.classList.add("col-md-4");
-        emailLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other email ID</label><input type="email" class="form-control" name="emailAddress" aria-describedby="emailHelp" placeholder="">';
+        emailLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other email ID</label><input type="email" class="form-control" name="labelemailAddress" aria-describedby="emailHelp" placeholder="">';
         newEmailForm.appendChild(emailLabelDiv);
 
         var deleteButtonDiv = document.createElement("div");
@@ -434,7 +434,7 @@ function addWebsite() {
     // Add label for website URL
     var websiteLabelDiv = document.createElement("div");
     websiteLabelDiv.classList.add("col-md-4");
-    websiteLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other website URL</label><input type="url" class="form-control" name="websiteUrl" aria-describedby="emailHelp" placeholder="">';
+    websiteLabelDiv.innerHTML = '<label for="exampleInputPassword1">Label for other website URL</label><input type="url" class="form-control" name="labelwebsiteUrl" aria-describedby="emailHelp" placeholder="">';
     newWebsiteForm.appendChild(websiteLabelDiv);
 
     var deleteButtonDiv = document.createElement("div");

@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="db.dbcon"%>
-<%@include file="session.jsp" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,6 +68,7 @@
                     </div>
                 </header> End Header -->
         <%@include file="header.jsp" %>
+        <%@include file="rcsbtn.jsp" %>
         <!-- ======= Hero Section ======= -->
         <section id="hero1" class="d-flex align-items-center">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -75,17 +76,7 @@
 
                     <div class="col-md-4 col-sm-4 col-xs-12">
                        
-                        <%                         if (username.equals("ram@virtuosonetsoft")) {
-                        %>
-                        <button type="button" class="btn btn-secondary" onclick="openJspPage()">Create New RCS Bot</button><br>
-                        <%
-                        } else {
-                        %>
-                     
-                        <%
-                            }
-                        %>
-
+                        <button type="button" id="RCS_BTN" class="btn btn-secondary" onclick="openJspPage()" style="display:none;">Create New RCS Bot</button><br>
                         <!-- Search form -->
                         <label class="s_bot" for="search">Search Bots</label>
                         <div class="active-purple-3 active-purple-4 mb-4">
